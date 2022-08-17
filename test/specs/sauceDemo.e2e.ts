@@ -1,8 +1,9 @@
 import Sauce from "../pageobjects/sauceDemo/sauce.page";
+import { TEST_CREDS } from "../constants/user";
 
 describe("sauce demo test", async () => {
   it("should login to the system", async () => {
-    await Sauce.login("standard_user", "secret_sauce"); // Login to the system
+    await Sauce.login(TEST_CREDS.USERNAME, TEST_CREDS.PASSWORD); // Login to the system
   });
   it("should add the items and increase the cart count", async () => {
     await Sauce.addAndVerifyCart();
